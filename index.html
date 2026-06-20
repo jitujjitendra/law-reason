@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Law & Reason simplifies legal awareness with practical guides, resources and structured next steps."
+    />
+    <title>Law & Reason | Understanding Law. Navigating Life.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-scales" viewBox="0 0 64 64">
+        <path d="M32 8v46M21 55h22M25 13h14M12 19h40M14 19 7 36h14L14 19Zm36 0-7 17h14L50 19ZM5 36c1 6 17 6 18 0M41 36c1 6 17 6 18 0" />
+      </symbol>
+      <symbol id="icon-home" viewBox="0 0 48 48">
+        <path d="M6 22 24 7l18 15M10 20v21h11V29h6v12h11V20" />
+      </symbol>
+      <symbol id="icon-users" viewBox="0 0 48 48">
+        <circle cx="15" cy="16" r="6" /><circle cx="34" cy="16" r="6" />
+        <path d="M5 40V30c0-5 4-8 10-8s10 3 10 8v10M24 40V30c0-5 4-8 10-8s9 3 9 8v10M24 10v11" />
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 48 48">
+        <path d="M5 8h6l5 23h20l5-16H13M17 21h22M20 38h.1M34 38h.1" />
+      </symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 48 48">
+        <rect x="5" y="15" width="38" height="26" rx="2" />
+        <path d="M17 15v-5h14v5M5 25h38M20 23v5h8v-5" />
+      </symbol>
+      <symbol id="icon-document" viewBox="0 0 48 48">
+        <path d="M10 5h19l9 9v29H10zM29 5v10h9M16 22h15M16 29h10" />
+        <circle cx="34" cy="34" r="7" /><path d="M34 30v8M31 32h5" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 48 48">
+        <path d="M24 5 40 11v12c0 10-7 17-16 21C15 40 8 33 8 23V11zM24 14v20M20 18h8M20 30h8" />
+      </symbol>
+      <symbol id="icon-person" viewBox="0 0 48 48">
+        <circle cx="24" cy="13" r="7" /><path d="M11 42V29c0-7 5-11 13-11s13 4 13 11v13M18 42V31h12v11" />
+      </symbol>
+      <symbol id="icon-clipboard" viewBox="0 0 48 48">
+        <rect x="9" y="8" width="30" height="36" rx="2" />
+        <path d="M18 8V4h12v4M16 19h3M23 19h10M16 27h3M23 27h10M16 35h3M23 35h10" />
+      </symbol>
+      <symbol id="icon-folder" viewBox="0 0 48 48">
+        <path d="M4 14h15l5 5h20l-5 23H9zM6 14V9h15l4 5M9 27h30" />
+      </symbol>
+      <symbol id="icon-news" viewBox="0 0 48 48">
+        <rect x="7" y="5" width="31" height="38" rx="2" />
+        <path d="M14 13h10v10H14zM28 14h5M28 20h5M14 29h19M14 35h19M38 13h4v25c0 3-2 5-5 5" />
+      </symbol>
+      <symbol id="icon-chat" viewBox="0 0 48 48">
+        <path d="M5 9h29v22H16L7 39v-8H5zM20 17h.1M27 17h.1M13 17h.1" />
+        <path d="M34 18h9v20h-5v6l-8-6H19v-7" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 48 48">
+        <circle cx="21" cy="21" r="13" /><path d="m31 31 11 11" />
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 48 48">
+        <rect x="5" y="10" width="38" height="28" rx="2" /><path d="m7 13 17 14 17-14" />
+      </symbol>
+      <symbol id="icon-book" viewBox="0 0 48 48">
+        <path d="M5 9h14c5 0 7 3 7 7v25c0-4-3-6-7-6H5zM43 9H29c-2 0-3 1-3 3v29c0-4 3-6 7-6h10z" />
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="19" /><path d="M24 13v12l8 5" />
+      </symbol>
+      <symbol id="icon-gavel" viewBox="0 0 48 48">
+        <path d="m9 11 12 12M17 5l16 16-6 6L11 11zM29 25 43 39M6 42h28" />
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 48 48">
+        <rect x="7" y="7" width="34" height="34" rx="9" /><circle cx="24" cy="24" r="8" /><circle cx="34" cy="14" r="1" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 48 48">
+        <path d="M7 13h34M7 24h34M7 35h34" />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 48 48">
+        <path d="M10 10l28 28M38 10 10 38" />
+      </symbol>
+    </svg>
+
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <p>This platform is for informational purposes only and does not constitute legal advice.</p>
+        <nav aria-label="Utility navigation">
+          <a href="#weekly">Weekly Digest</a>
+          <a href="#resources">Resources</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Law and Reason home">
+          <svg aria-hidden="true"><use href="#icon-scales"></use></svg>
+          <span>
+            <strong>LAW &amp; REASON</strong>
+            <small>Understanding Law. Navigating Life.</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <svg aria-hidden="true"><use href="#icon-menu"></use></svg>
+          <span class="sr-only">Open menu</span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a class="active" href="#top">Home</a>
+          <a href="#guidance">What Should I Do?</a>
+          <a href="#legal-areas">Legal Guides</a>
+          <a href="#resources">Resources</a>
+          <a href="#weekly">Law &amp; Reason Weekly</a>
+          <button class="button button-gold js-open-query" type="button">Ask Law &amp; Reason</button>
+          <button class="search-button" type="button" aria-label="Search">
+            <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Legal awareness for everyday life</p>
+          <h1>Understanding Law.<br /><span>Navigating Life.</span></h1>
+          <p class="hero-copy">
+            Simplifying legal processes through awareness, practical resources, and structured
+            pathways to seek guidance.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-navy" href="#legal-areas">Explore Legal Guides</a>
+            <a class="button button-gold" href="#guidance">What Should I Do?</a>
+            <a class="button button-outline" href="#weekly">Law &amp; Reason Weekly</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="legal-areas section" id="legal-areas">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="eyebrow">Browse by topic</p>
+            <h2>Common Legal Areas People Seek Information On</h2>
+          </div>
+          <div class="area-grid">
+            <a class="area-card" href="#">
+              <svg><use href="#icon-home"></use></svg>
+              <h3>Property &amp; Rent</h3>
+              <p>Buying, selling, rent agreements, disputes and more.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-users"></use></svg>
+              <h3>Family Matters</h3>
+              <p>Divorce, maintenance, inheritance, child custody and more.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-cart"></use></svg>
+              <h3>Consumer Rights</h3>
+              <p>Refunds, defective products, online complaints and more.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-briefcase"></use></svg>
+              <h3>Employment Issues</h3>
+              <p>Termination, notice periods, salary issues and more.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-document"></use></svg>
+              <h3>Cheque Bounce</h3>
+              <p>Legal notice, process, complications and consequences.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-shield"></use></svg>
+              <h3>Police &amp; Criminal Procedure</h3>
+              <p>FIR, arrest, bail, rights during investigation and more.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-person"></use></svg>
+              <h3>Senior Citizen Rights</h3>
+              <p>Maintenance, property, protection and legal safeguards.</p>
+            </a>
+            <a class="area-card" href="#">
+              <svg><use href="#icon-clipboard"></use></svg>
+              <h3>Documentation &amp; Records</h3>
+              <p>Important documents, organisers, checklists and more.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="guidance section" id="guidance">
+        <div class="container guidance-panel">
+          <div class="guidance-intro">
+            <p class="eyebrow">Situation-based guidance</p>
+            <h2>What Should I Do?</h2>
+            <p>Step-by-step guidance for common situations people face in everyday life.</p>
+            <a class="button button-gold" href="#">View All Topics <span>&rarr;</span></a>
+          </div>
+          <div class="scenario-wrap">
+            <div class="scenario-grid">
+              <a class="scenario-card" href="#">
+                <span>What should I do if I receive a legal notice?</span><b>&rarr;</b>
+              </a>
+              <a class="scenario-card" href="#">
+                <span>What should I do if my cheque bounces?</span><b>&rarr;</b>
+              </a>
+              <a class="scenario-card" href="#">
+                <span>What should I do if police contact me?</span><b>&rarr;</b>
+              </a>
+              <a class="scenario-card" href="#">
+                <span>What should I do if my tenant refuses to vacate?</span><b>&rarr;</b>
+              </a>
+              <a class="scenario-card" href="#">
+                <span>What should I do if my builder delays possession?</span><b>&rarr;</b>
+              </a>
+            </div>
+            <div class="topic-features">
+              <strong>Each topic provides clear and practical information on:</strong>
+              <span><svg><use href="#icon-book"></use></svg>Understand the issue</span>
+              <span><svg><use href="#icon-clipboard"></use></svg>Immediate steps to take</span>
+              <span><svg><use href="#icon-document"></use></svg>Documents to preserve</span>
+              <span><svg><use href="#icon-clock"></use></svg>Important timelines</span>
+              <span><svg><use href="#icon-gavel"></use></svg>When assistance may help</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-cards section" id="resources">
+        <div class="container feature-grid">
+          <article class="feature-card resources-card">
+            <svg class="feature-icon"><use href="#icon-folder"></use></svg>
+            <div>
+              <p class="eyebrow">Useful tools</p>
+              <h2>Practical Legal Resources</h2>
+              <p>Checklists, trackers and organisers to help you stay informed and prepared.</p>
+              <a class="button button-gold" href="#">Explore Resources <span>&rarr;</span></a>
+              <small>Some resources may require a nominal contribution towards preparation and maintenance costs.</small>
+            </div>
+          </article>
+
+          <article class="feature-card weekly-card" id="weekly">
+            <svg class="feature-icon"><use href="#icon-news"></use></svg>
+            <div>
+              <p class="eyebrow">Every week, made clear</p>
+              <h2>Law &amp; Reason Weekly</h2>
+              <p>Your weekly dose of legal awareness and updates.</p>
+              <ul class="check-list">
+                <li>Important legal developments</li>
+                <li>Practical implications</li>
+                <li>Legal myth vs reality</li>
+                <li>Citizen awareness tips</li>
+              </ul>
+              <form class="newsletter-form js-newsletter">
+                <label class="sr-only" for="weekly-email">Email address</label>
+                <input id="weekly-email" type="email" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+              </form>
+              <small class="form-note">No spam. Unsubscribe anytime.</small>
+            </div>
+          </article>
+
+          <article class="feature-card query-card">
+            <svg class="feature-icon"><use href="#icon-chat"></use></svg>
+            <div>
+              <p class="eyebrow">General information</p>
+              <h2>Ask Law &amp; Reason</h2>
+              <p>Have a legal query? Share your concern and we will review it for informational purposes.</p>
+              <ul class="check-list">
+                <li>Submit general information</li>
+                <li>Get a response where appropriate</li>
+                <li>Professional engagement, if any, will be discussed separately</li>
+              </ul>
+              <button class="button button-gold js-open-query" type="button">Submit Your Query <span>&rarr;</span></button>
+              <small>This does not create an advocate-client relationship.</small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="myths section">
+        <div class="container myths-panel">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Know the difference</p>
+              <h2>Legal Myths vs Reality</h2>
+            </div>
+            <a href="#">View All Myths <span>&rarr;</span></a>
+          </div>
+          <div class="myths-grid">
+            <article class="myth-card">
+              <div>
+                <span class="label">Myth</span>
+                <h3>Police can arrest anyone without procedure.</h3>
+              </div>
+              <svg><use href="#icon-shield"></use></svg>
+              <div>
+                <span class="label reality">Reality</span>
+                <p>Arrest requires legal grounds and must follow due procedure.</p>
+                <a href="#">Read More <span>&rarr;</span></a>
+              </div>
+            </article>
+            <article class="myth-card">
+              <div>
+                <span class="label">Myth</span>
+                <h3>All unregistered agreements are invalid.</h3>
+              </div>
+              <svg><use href="#icon-document"></use></svg>
+              <div>
+                <span class="label reality">Reality</span>
+                <p>An unregistered agreement can still be valid in many situations.</p>
+                <a href="#">Read More <span>&rarr;</span></a>
+              </div>
+            </article>
+            <article class="myth-card">
+              <div>
+                <span class="label">Myth</span>
+                <h3>A bounced cheque always leads to imprisonment.</h3>
+              </div>
+              <svg><use href="#icon-gavel"></use></svg>
+              <div>
+                <span class="label reality">Reality</span>
+                <p>Imprisonment is not automatic; it depends on various factors.</p>
+                <a href="#">Read More <span>&rarr;</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <h2>About Law &amp; Reason</h2>
+          <p>
+            Law &amp; Reason is a legal awareness initiative focused on simplifying legal concepts
+            and promoting informed decision-making through accessible educational content and practical resources.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a>
+            <a href="#" aria-label="Email"><svg><use href="#icon-mail"></use></svg></a>
+          </div>
+        </div>
+        <div>
+          <h2>Quick Links</h2>
+          <a href="#guidance">What Should I Do?</a>
+          <a href="#legal-areas">Legal Guides</a>
+          <a href="#resources">Resources</a>
+          <a href="#weekly">Law &amp; Reason Weekly</a>
+          <button class="footer-link js-open-query" type="button">Ask Law &amp; Reason</button>
+          <a href="#about">About Us</a>
+        </div>
+        <div>
+          <h2>Popular Resources</h2>
+          <a href="#">Property Verification Checklist</a>
+          <a href="#">Family Legal Organiser</a>
+          <a href="#">Consumer Complaint Checklist</a>
+          <a href="#">Rent Agreement Checklist</a>
+          <a href="#">Legal Notice Preparation Sheet</a>
+          <a href="#">Court Timeline Organiser</a>
+        </div>
+        <div id="contact">
+          <h2>Connect</h2>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">LinkedIn</a>
+          <a href="mailto:hello@lawandreason.in">Email</a>
+        </div>
+        <div>
+          <h2>Newsletter</h2>
+          <p>Stay informed with weekly legal awareness updates.</p>
+          <form class="newsletter-form js-newsletter">
+            <label class="sr-only" for="footer-email">Email address</label>
+            <input id="footer-email" type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <small class="form-note">No spam. Unsubscribe anytime.</small>
+        </div>
+      </div>
+      <div class="container footer-legal">
+        <p>
+          Disclaimer: The information contained on this website is intended solely for educational
+          and informational purposes and should not be construed as legal advice. Accessing this website,
+          communicating through it, or submitting a query does not create an advocate-client relationship.
+        </p>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Law &amp; Reason. All Rights Reserved.</span>
+          <span><a href="#">Privacy Policy</a><i></i><a href="#">Terms of Use</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <dialog class="query-modal" id="query-modal">
+      <button class="modal-close" type="button" aria-label="Close">
+        <svg><use href="#icon-close"></use></svg>
+      </button>
+      <p class="eyebrow">Informational guidance</p>
+      <h2>Ask Law &amp; Reason</h2>
+      <p>Tell us a little about your concern. Please do not include confidential or highly sensitive information.</p>
+      <form id="query-form">
+        <label>
+          Name
+          <input name="name" type="text" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Legal area
+          <select name="area" required>
+            <option value="">Select a topic</option>
+            <option>Property &amp; Rent</option>
+            <option>Family Matters</option>
+            <option>Consumer Rights</option>
+            <option>Employment Issues</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          Your query
+          <textarea name="query" rows="5" placeholder="Briefly describe your concern" required></textarea>
+        </label>
+        <button class="button button-gold" type="submit">Submit Query</button>
+        <p class="modal-status" role="status"></p>
+      </form>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
