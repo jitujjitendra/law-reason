@@ -1,0 +1,28 @@
+# Law & Reason
+> A legal awareness platform simplifying legal concepts for everyday life in India.
+
+## About
+Law & Reason is an educational legal awareness initiative focused on simplifying legal concepts and promoting informed decision-making through accessible content and practical resources. It covers property law, family matters, consumer rights, employment issues, criminal procedure, senior citizen rights, and documentation guidance.
+
+## Content Areas
+- Legal Guides: Comprehensive guides on 8 major legal areas relevant to Indian citizens
+- What Should I Do?: Step-by-step guidance for common legal situations
+- Legal Myths vs Reality: Debunking common legal misconceptions
+- Blog: Weekly articles on legal awareness, updates, and practical implications
+- Resources: Checklists, trackers, and organisers for legal preparedness
+
+## Important Notice
+This platform is for informational and educational purposes only. Content does not constitute legal advice. No advocate-client relationship is created through this website.
+
+## Languages
+Content is available in English and Hindi.
+
+## Contact
+- Website: https://lawandreason.com
+- Email: contact@lawandreason.com
+
+## Sections
+- /blog/ - Legal awareness articles and updates
+- /legal-areas/ - Guides organized by legal topic
+- /scenarios/ - Situation-based step-by-step guidance
+- /myths/ - Legal myths debunked with factual information
