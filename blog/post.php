@@ -143,7 +143,7 @@ require_once __DIR__ . '/../templates/header.php';
             <?php endif; ?>
 
             <div class="blog-post-content">
-                <?php echo getLangValue($post, 'content'); ?>
+                <?php echo sanitizeHTML(getLangValue($post, 'content')); ?>
             </div>
 
             <?php if ($post['tags']): ?>

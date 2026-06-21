@@ -108,7 +108,7 @@ require_once __DIR__ . '/../../templates/header.php';
             </header>
 
             <div class="scenario-content">
-                <?php echo getLangValue($scenario, 'content'); ?>
+                <?php echo sanitizeHTML(getLangValue($scenario, 'content')); ?>
             </div>
 
             <div class="scenario-features">

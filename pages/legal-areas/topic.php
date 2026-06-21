@@ -124,7 +124,7 @@ require_once __DIR__ . '/../../templates/header.php';
             <?php $content = getLangValue($topic, 'content'); ?>
             <?php if (!empty($content)): ?>
             <div class="topic-content">
-                <?php echo $content; ?>
+                <?php echo sanitizeHTML($content); ?>
             </div>
             <?php endif; ?>
 
@@ -151,7 +151,7 @@ require_once __DIR__ . '/../../templates/header.php';
                     <details class="faq-item">
                         <summary><?php echo htmlspecialchars(getLangValue($faq, 'question')); ?></summary>
                         <div class="faq-answer">
-                            <?php echo getLangValue($faq, 'answer'); ?>
+                            <?php echo sanitizeHTML(getLangValue($faq, 'answer')); ?>
                         </div>
                     </details>
                     <?php endforeach; ?>

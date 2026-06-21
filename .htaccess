@@ -35,7 +35,14 @@ RewriteRule ^includes/ - [F,L]
 RewriteRule ^database/ - [F,L]
 RewriteRule ^admin/includes/ - [F,L]
 
+# Sitemap
+RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+
 # Clean URL Rewrites
+
+# Prevent rewriting existing files/directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
 # Search page
 RewriteRule ^search$ /search.php [L,QSA]
@@ -81,5 +88,5 @@ RewriteRule ^myths/([a-zA-Z0-9\-]+)/?$ /pages/myths/myth.php?slug=$1 [L,QSA]
 </IfModule>
 
 # Custom error pages
-ErrorDocument 404 /index.php
-ErrorDocument 500 /index.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /404.php

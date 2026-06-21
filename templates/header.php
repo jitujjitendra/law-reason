@@ -28,6 +28,9 @@ $currentPage = $currentPage ?? 'home';
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <link rel="canonical" href="<?php echo htmlspecialchars($pageCanonical); ?>">
+    <?php if (isset($noIndex) && $noIndex): ?>
+    <meta name="robots" content="noindex, follow">
+    <?php endif; ?>
     
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">

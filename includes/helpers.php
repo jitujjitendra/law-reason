@@ -222,3 +222,27 @@ function sendNotificationEmail($to, $subject, $body) {
     
     return @mail($to, $subject, $body, implode("\r\n", $headers));
 }
+
+/**
+ * Sanitize HTML content from admin editor
+ * Allows safe formatting tags, strips dangerous ones (script, iframe, etc.)
+ */
+function sanitizeHTML($html) {
+    // Allowed tags for blog/topic content
+    $allowedTags = '<h2><h3><h4><p><br><strong><b><em><i><u><a><ul><ol><li><blockquote><hr><img><span><div><table><thead><tbody><tr><th><td>';
+    
+    // Strip all tags except allowed
+    $clean = strip_tags($html, $allowedTags);
+    
+    // Remove any event handlers (onclick, onerror, etc.)
+    $clean = preg_replace('/\s*on\w+\s*=\s*["\'][^"\']*["\']/i', '', $clean);
+    $clean = preg_replace('/\s*on\w+\s*=\s*\S+/i', '', $clean);
+    
+    // Remove javascript: protocol in links
+    $clean = preg_replace('/href\s*=\s*["\']?\s*javascript\s*:/i', 'href="', $clean);
+    
+    // Remove data: protocol in src (except data:image)
+    $clean = preg_replace('/src\s*=\s*["\']?\s*data\s*:(?!image)/i', 'src="', $clean);
+    
+    return $clean;
+}

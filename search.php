@@ -92,6 +92,7 @@ $pageDescription = $lang === 'hi'
 $pageCanonical = canonicalURL('search');
 $currentPage = 'search';
 $bodyClass = 'page-search';
+$noIndex = true; // Don't index search results pages
 
 $breadcrumbs = getBreadcrumbs([
     ['label' => $strings['nav_home'], 'url' => SITE_URL],

@@ -8,7 +8,10 @@
 function startSecureSession() {
     if (session_status() === PHP_SESSION_NONE) {
         ini_set('session.cookie_httponly', 1);
-        ini_set('session.cookie_secure', 1);
+        // Only set secure cookie flag if on HTTPS (prevents issues on localhost/dev)
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+            ini_set('session.cookie_secure', 1);
+        }
         ini_set('session.use_strict_mode', 1);
         session_start();
     }
