@@ -1,0 +1,15 @@
+# Law & Reason - Robots.txt
+# https://lawandreason.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin area
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /database/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://lawandreason.com/sitemap.xml
