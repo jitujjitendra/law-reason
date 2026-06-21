@@ -485,9 +485,36 @@ $adminName = $_SESSION['admin_name'] ?? 'Admin';
         }
 
         @media (max-width: 768px) {
-            .admin-sidebar { transform: translateX(-100%); }
+            .admin-sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+            .admin-sidebar.open { transform: translateX(0); }
             .admin-topbar { left: 0; }
             .admin-main { margin-left: 0; }
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border: 1px solid var(--gray-200);
+                border-radius: 6px;
+                background: var(--gray-50);
+                cursor: pointer;
+                font-size: 1.2rem;
+            }
+            .admin-overlay {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0,0,0,0.4);
+                z-index: 99;
+            }
+            .admin-overlay.active { display: block; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-toggle { display: none; }
+            .admin-overlay { display: none !important; }
         }
     </style>
 </head>
@@ -540,12 +567,18 @@ $adminName = $_SESSION['admin_name'] ?? 'Admin';
 
     <!-- Top Bar -->
     <header class="admin-topbar">
-        <div class="topbar-title"><?= htmlspecialchars($pageTitle ?? 'Dashboard') ?></div>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <button class="mobile-menu-toggle" id="adminMenuToggle" type="button" aria-label="Open menu">&#9776;</button>
+            <div class="topbar-title"><?= htmlspecialchars($pageTitle ?? 'Dashboard') ?></div>
+        </div>
         <div class="topbar-right">
             <span class="topbar-user">Hello, <?= htmlspecialchars($adminName) ?></span>
             <a href="/admin/logout.php" class="topbar-logout">Logout</a>
         </div>
     </header>
+
+    <!-- Mobile overlay -->
+    <div class="admin-overlay" id="adminOverlay"></div>
 
     <!-- Main Content -->
     <main class="admin-main">

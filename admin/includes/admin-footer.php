@@ -40,6 +40,26 @@
             setTimeout(function() { el.remove(); }, 500);
         }, 5000);
     });
+
+    // Admin mobile sidebar toggle
+    (function() {
+        var toggle = document.getElementById('adminMenuToggle');
+        var sidebar = document.querySelector('.admin-sidebar');
+        var overlay = document.getElementById('adminOverlay');
+        
+        if (toggle && sidebar) {
+            toggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                if (overlay) overlay.classList.toggle('active');
+            });
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('active');
+                });
+            }
+        }
+    })();
     </script>
 </body>
 </html>

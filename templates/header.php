@@ -206,6 +206,11 @@ $currentPage = $currentPage ?? 'home';
                 <button class="search-button js-open-search" type="button" aria-label="<?php echo $strings['nav_search']; ?>">
                     <svg aria-hidden="true"><use href="#icon-search"></use></svg>
                 </button>
+                <!-- Language switch inside mobile menu -->
+                <a href="<?php echo langSwitchURL($lang === 'en' ? 'hi' : 'en'); ?>" class="lang-switch-mobile">
+                    <svg aria-hidden="true" style="width:18px;height:18px;"><use href="#icon-lang"></use></svg>
+                    <?php echo $strings['lang_switch']; ?>
+                </a>
             </nav>
         </div>
     </header>
